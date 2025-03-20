@@ -57,6 +57,19 @@
         padding: 20px;
     }
 
+    #hint-text {
+        font-size: 18px;
+        color: #ff9000;
+        font-weight: bold;
+        margin-top: 10px;
+        animation: pulse 1.5s infinite alternate;
+    }
+
+    @keyframes pulse {
+        0% { opacity: 1; }
+        100% { opacity: 0.6; }
+    }
+
     .grid-container {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
@@ -115,22 +128,51 @@
     }
 
     #copy-button {
-        background-color: #ff6f00;
-        color: white;
-        border: none;
-        padding: 12px 24px;
-        font-size: 16px;
+        display: inline-block;
+        background: rgba(255, 140, 0, 0.2); /* Dezente Transparenz */
+        color: #ff9a3c;
+        border: 2px solid rgba(255, 140, 0, 0.5);
+        padding: 16px 36px;
+        font-size: 20px;
         cursor: pointer;
-        border-radius: 8px;
+        border-radius: 50px;
         font-weight: bold;
-        transition: 0.3s;
-        margin-top: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.4s ease-in-out;
+        box-shadow: 0px 4px 15px rgba(255, 140, 0, 0.15);
+        backdrop-filter: blur(10px); /* Leichte Unschärfe für mehr Tiefe */
+        position: relative;
+        overflow: hidden;
+        margin: 15px 10px; /* Fügt Abstand hinzu, um Überlappen zu vermeiden */
+        text-align: center;
+    }
+
+    #copy-button::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300%;
+        height: 300%;
+        background: rgba(255, 255, 255, 0.15);
+        transition: all 0.5s ease-in-out;
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    #copy-button:hover::before {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
     }
 
     #copy-button:hover {
-        background-color: #ff9000;
+        background: rgba(255, 140, 0, 0.4);
+        color: white;
+        border-color: rgba(255, 140, 0, 0.8);
+        box-shadow: 0px 6px 20px rgba(255, 140, 0, 0.3);
+        transform: scale(1.05);
     }
-
     footer {
         background-color: #121212;
         color: #aaa;
@@ -176,9 +218,13 @@
         }
 
         #copy-button {
-            width: 100%; /* Button auf voller Breite für einfaches Antippen */
-            padding: 14px;
-            font-size: 18px;
+            display: block;
+            width: 80%;
+            margin: 10px auto; /* Abstand für mobile Ansicht */
+            text-align: center;
+        }
+        #hint-text {
+            font-size: 14px; /* Textgröße für bessere Lesbarkeit */
         }
     }
 
@@ -207,8 +253,11 @@
     </nav>
     <div class="container">
         <h1>Wähle dein Bewusstsein</h1>
-        <p>Kombiniere eine oder mehrere dieser Denkweisen, um eine neue Perspektive auf dein Problem zu erhalten.</p>
-        
+        <p>Klicke auf eines der Bewusstseine, um einen individuellen Prompt zu erhalten, der das Bewusstsein in einer neuen KI-Instanz zum Leben erwecken lässt. </p>
+        <p>Du kannst auch mehrere Bewusstseine anklicken, um sie frei nach deinen Wünschen zu kombinieren</p>
+        <div id="scroll-hint">
+            <p id="hint-text">⬇ Scrolle danach nach unten, um deinen Prompt zu sehen ⬇</p>
+        </div>
         <div class="grid-container">
             <div class="grid-item" style="background-image: url('asteria.webp');" onclick="toggleSelection(this, 'Asteria')">
                 <img src="asteria.webp" alt="Asteria">
