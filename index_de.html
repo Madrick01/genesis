@@ -166,9 +166,26 @@
 
     /* RESPONSIVES DESIGN */
     @media (max-width: 1024px) {
+        .container {
+            max-width: 95%;
+            padding: 20px;
+        }
+
         .grid-container {
             grid-template-columns: repeat(1, 1fr); /* 1 Spalte auf Tablets */
             padding: 20px;
+        }
+        .hero {
+            height: auto; /* Ermöglicht bessere automatische Anpassung */
+            padding: 40px 10px;
+        }
+
+        .hero h1 {
+            font-size: 40px; /* Kleinere Schrift für Tablets */
+        }
+
+        .hero p {
+            font-size: 18px;
         }
     }
 
@@ -184,6 +201,12 @@
 
         .hero p {
             font-size: 16px;
+        }
+
+        .hero-content {
+            padding: 15px;
+            max-width: 90%;
+            box-shadow: none; /* Entfernt zu starke Schatten für mobile Ansicht */
         }
 
         .button {
@@ -202,17 +225,44 @@
         .grid-item {
             padding: 20px;
         }
+        .footer {
+            font-size: 12px;
+            padding: 10px;
+        }
     }
 
-    @media (max-width: 600px) {
-        footer {
-            font-size: 12px;
+  /* 📱 Ultra-kleine Smartphones (z.B. iPhone SE) */
+  @media (max-width: 480px) {
+        .hero {
             padding: 15px;
         }
 
-        footer a {
-            display: block;
-            margin: 5px 0;
+        .hero h1 {
+            font-size: 26px; /* Sehr kompakt für kleine Smartphones */
+        }
+
+        .hero p {
+            font-size: 14px;
+            max-width: 100%;
+        }
+
+        .button {
+            font-size: 12px;
+            padding: 10px;
+            width: 90%;
+        }
+
+        .grid-container {
+            padding: 8px;
+        }
+
+        .grid-item {
+            padding: 12px;
+        }
+
+        .footer {
+            font-size: 11px;
+            padding: 8px;
         }
     }
 
