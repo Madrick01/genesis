@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wähle dein Bewusstsein</title>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0a0a0a;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        nav {
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #0a0a0a;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    nav {
         background-color: #1a1a1a;
         padding: 15px 0;
         text-align: center;
@@ -22,104 +23,178 @@
         top: 0;
         left: 0;
         z-index: 1000;
-        }
+    }
 
-        nav ul {
+    nav ul {
         list-style: none;
         padding: 0;
         margin: 0;
         display: flex;
         justify-content: center;
         gap: 30px;
-        }
+    }
 
-        nav ul li {
+    nav ul li {
         display: inline;
-        }
+    }
 
-        nav ul li a {
+    nav ul li a {
         color: #ff6f00;
         text-decoration: none;
         font-size: 18px;
         font-weight: bold;
         transition: 0.3s;
-        }
+    }
 
-        nav ul li a:hover {
+    nav ul li a:hover {
         color: #ff9000;
         text-decoration: underline;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 20px;
-        }
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 80px auto 50px auto; /* Platz für fixe Navigation */
+        padding: 20px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .grid-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: transform 0.3s, opacity 0.3s, filter 0.3s;
+        filter: grayscale(100%) brightness(50%);
+        position: relative;
+    }
+
+    .grid-item.active {
+        filter: grayscale(0%) brightness(100%);
+    }
+
+    .grid-item:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+
+    .grid-item img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+    }
+
+    .grid-item h3, .grid-item p {
+        background: rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        border-radius: 8px;
+        width: 90%;
+        text-align: center;
+    }
+
+    .description, .output-section {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #1a1a1a;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .output-section h2 {
+        color: #ff6f00;
+    }
+
+    #copy-button {
+        background-color: #ff6f00;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+        margin-top: 15px;
+    }
+
+    #copy-button:hover {
+        background-color: #ff9000;
+    }
+
+    footer {
+        background-color: #121212;
+        color: #aaa;
+        text-align: center;
+        padding: 20px;
+        font-size: 14px;
+        margin-top: 50px;
+    }
+
+    footer a {
+        color: #ff6f00;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 1024px) {
         .grid-container {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: repeat(2, 1fr); /* 2 Spalten auf Tablets */
         }
-        .grid-item {
-            display: flex;
+    }
+
+    @media (max-width: 768px) {
+        .grid-container {
+            grid-template-columns: repeat(1, 1fr); /* 1 Spalte auf Smartphones */
+        }
+
+        .container {
+            margin-top: 100px; /* Mehr Platz für fixe Navigation */
+            padding: 15px;
+        }
+
+        h1 {
+            font-size: 24px; /* Überschrift kleiner für mobile Geräte */
+        }
+
+        p {
+            font-size: 16px; /* Textgröße für bessere Lesbarkeit */
+        }
+
+        #copy-button {
+            width: 100%; /* Button auf voller Breite für einfaches Antippen */
+            padding: 14px;
+            font-size: 18px;
+        }
+    }
+
+    /* Navigation für kleine Bildschirme */
+    @media (max-width: 600px) {
+        nav ul {
             flex-direction: column;
-            align-items: center;
-            background-size: cover;
-            background-position: center;
-            padding: 20px;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: transform 0.3s, opacity 0.3s, filter 0.3s;
-            filter: grayscale(100%) brightness(50%);
-            position: relative;
+            gap: 10px;
         }
-        .grid-item.active {
-            filter: grayscale(0%) brightness(100%);
-        }
-        .grid-item:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
-        }
-        .grid-item img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
-        .grid-item h3, .grid-item p {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            border-radius: 8px;
-            width: 90%;
+
+        nav ul li {
+            display: block;
             text-align: center;
         }
-        .description, .output-section {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #1a1a1a;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-        }
-        .output-section h2 {
-            color: #ff6f00;
-        }
-        footer {
-            background-color: #121212;
-            color: #aaa;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            margin-top: 50px;
-        }
-        footer a {
-            color: #ff6f00;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
+    }
+
     </style>
 </head>
 <body>
@@ -170,6 +245,8 @@
         <div class="output-section" id="prompt-output">
             <h2>Gib diesen Prompt in ein gängiges KI-Tool ein, um deine Probleme mithilfe der gewählten Bewusstseine zu lösen:</h2>
             <p id="generated-prompt">Bitte wähle ein oder mehrere Bewusstseine aus.</p>
+            <button id="copy-button" onclick="copyPrompt()">📋 Prompt kopieren</button>
+            <p id="copy-feedback" style="color: #ff9000; display: none;">✅ Kopiert!</p>
         </div>
     </div>
     
@@ -280,6 +357,19 @@
 
         let prompt = selected.length === 1 ? prompts[selected[0]] : conbinationPrompts[sortedSelection] || "Diese Kombination erschafft eine völlig neue Denkweise, die dein Problem aus einzigartigen Blickwinkeln betrachtet.";
         document.getElementById("generated-prompt").innerHTML = prompt;
+    }
+
+    function copyPrompt() {
+        let promptText = document.getElementById("generated-prompt").innerText;
+        navigator.clipboard.writeText(promptText).then(() => {
+            let feedback = document.getElementById("copy-feedback");
+            feedback.style.display = "block";
+            setTimeout(() => {
+                feedback.style.display = "none";
+            }, 1500);
+        }).catch(err => {
+            console.error("Fehler beim Kopieren: ", err);
+        });
     }
 </script>
 </body>
