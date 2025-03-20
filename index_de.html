@@ -36,6 +36,7 @@
         position: relative;
         margin: 0 auto; /* Stellt sicher, dass nichts über den Rand geht */
     }
+    
     .hero::before {
         content: "";
         position: absolute;
@@ -49,12 +50,14 @@
     .hero-content {
         position: relative;
         z-index: 2;
-        background-color: rgba(0, 180, 216, 0.2);
-        box-shadow: inset 0px 0px 15px rgba(0, 180, 216, 0.2);
-        max-width: 900px;
+        background-color: rgba(0, 180, 216, 0.15); /* Leicht reduzierte Transparenz */
+        box-shadow: inset 0px 0px 10px rgba(0, 180, 216, 0.3);
+        max-width: 90%;
         padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        margin: 0 auto; /* Fixiert absolute Zentrierung */
     }
-
     .hero h1 {
         font-size: 56px;
         color: #3abbeb;
