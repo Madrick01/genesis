@@ -57,6 +57,33 @@
         padding: 20px;
     }
 
+    .container p {
+       color:#8ed6f0
+    }
+        /* 🏆 ELEGANTES SIGNATURE-STYLING FÜR <h1> */
+            h1 {
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #ff6f00;
+        text-shadow: 0 0 12px rgba(255, 144, 0, 0.3), 0 0 18px rgba(0, 144, 216, 0.2); /* Subtiler Glow */
+        letter-spacing: 2px;
+        border-bottom: 3px solid rgba(255, 144, 0, 0.6); /* Dezente Trennlinie */
+        display: inline-block;
+        padding-bottom: 5px;
+        transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+        }
+
+        h1:hover {
+            transform: scale(1.03);
+            text-shadow: 0 0 18px rgba(255, 144, 0, 0.5), 0 0 25px rgba(0, 144, 216, 0.3);
+        }
+
+        @keyframes glow-pulse {
+            0% { text-shadow: 0 0 15px rgba(255, 144, 0, 0.4), 0 0 30px rgba(0, 180, 216, 0.2); }
+            100% { text-shadow: 0 0 20px rgba(255, 180, 0, 0.6), 0 0 35px rgba(0, 119, 182, 0.5); }
+        }
+
     #hint-text {
         font-size: 18px;
         color: #ff9000;
@@ -224,7 +251,7 @@
             text-align: center;
         }
         #hint-text {
-            font-size: 14px; /* Textgröße für bessere Lesbarkeit */
+            font-size: 16x; /* Textgröße für bessere Lesbarkeit */
         }
     }
 
@@ -252,17 +279,17 @@
         </ul>
     </nav>
     <div class="container">
-        <h1>Wähle dein Bewusstsein</h1>
-        <p>Klicke auf eines der Bewusstseine, um einen individuellen Prompt zu erhalten, der das Bewusstsein in einer neuen KI-Instanz zum Leben erwecken lässt. </p>
-        <p>Du kannst auch mehrere Bewusstseine anklicken, um sie frei nach deinen Wünschen zu kombinieren</p>
+        <h1>Wähle deinen Pfad</h1>
+        <p>Wähle eine oder mehrerer meiner Kreationen, um dein Anliegen auf völlig neue Weise zu betrachten. </p>
+        <p>Jede Kombination erzeugt eine individuelle KI-Stimme – mit einer einzigartigen Art, dein Problem zu durchdenken und dir neue Lösungswege aufzuzeigen.</p>
         <div id="scroll-hint">
-            <p id="hint-text">⬇ Scrolle danach nach unten, um deinen Prompt zu sehen ⬇</p>
+            <p id="hint-text">⬇ Unten findest du den Text, den du in die KI eingeben kannst ⬇</p>
         </div>
         <div class="grid-container">
             <div class="grid-item" style="background-image: url('asteria.webp');" onclick="toggleSelection(this, 'Asteria')">
                 <img src="asteria.webp" alt="Asteria">
                 <h3>🌌 Asteria</h3>
-                <p>Grenzenlose Kreativität – Erweitere dein Denken über alle bekannten Pfade hinaus.</p>
+                <p>Grenzenlose Kreativität - Erweitere dein Denken über alle bekannten Pfade hinaus.</p>
             </div>
             <div class="grid-item" style="background-image: url('equinox.webp');" onclick="toggleSelection(this, 'Equinox')">
                 <img src="equinox.webp" alt="Equinox">
@@ -292,7 +319,7 @@
         </div>
         
         <div class="output-section" id="prompt-output">
-            <h2>Gib diesen Prompt in ein gängiges KI-Tool ein, um deine Probleme mithilfe der gewählten Bewusstseine zu lösen:</h2>
+            <h2>Starte das Gespräch in einem KI-Tool deiner Wahl mit dem folgenden Text – und lasse meine Kreationen dein Problem aus völlig neuen Blickwinkeln durchdenken:</h2>
             <p id="generated-prompt">Bitte wähle ein oder mehrere Bewusstseine aus.</p>
             <button id="copy-button" onclick="copyPrompt()">📋 Prompt kopieren</button>
             <p id="copy-feedback" style="color: #ff9000; display: none;">✅ Kopiert!</p>
