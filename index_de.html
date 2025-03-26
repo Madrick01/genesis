@@ -228,9 +228,15 @@
         }
 
         .grid-container {
-            grid-template-columns: repeat(1, 1fr); /* 1 Spalte auf Tablets */
+            grid-template-columns: 1fr; /* Nur eine Spalte für Tablets und kleinere Geräte */
             padding: 20px;
         }
+
+        .grid-item {
+            width: 100%; /* Sicherstellen, dass die Grid-Items die volle Breite einnehmen */
+            margin-bottom: 20px;
+        }
+        
         .hero {
             height: auto; /* Ermöglicht bessere automatische Anpassung */
             padding: 40px 10px;
@@ -243,12 +249,26 @@
         .hero p {
             font-size: 18px;
         }
+
+        .grid-container {
+            display: block;
+            grid-template-columns: 1fr; /* Eine Spalte */
+            gap: 20px;
+            padding: 0 10px;  /* Weniger Abstand am Rand */
+        }
+
+        .grid-item {
+            width: 100%; /* Grid Items auf volle Breite setzen */
+            margin-bottom: 20px; /* Abstand zwischen den Items */
+            padding: 12px;
+        }
     }
 
     @media (max-width: 768px) {
         .hero {
             height: auto;
             padding: 0px;
+            margin-top: 20px;
         }
 
         .hero h1 {
@@ -273,14 +293,6 @@
             text-align: center;
         }
 
-        .grid-container {
-            grid-template-columns: repeat(1, 1fr); /* 1 Spalte auf Smartphones */
-            padding: 15px;
-        }
-
-        .grid-item {
-            padding: 20px;
-        }
         .footer {
             font-size: 12px;
             padding: 10px;
@@ -292,6 +304,7 @@
         .hero {
             height: auto;
             padding: 0px;
+            margin-top: 40px;
         }
 
         .hero h1 {
@@ -310,12 +323,12 @@
         }
 
         .grid-container {
-            padding: 8px;
-        }
+    padding: 0 10px;  /* Weniger Abstand an den Seiten */
+  }
 
-        .grid-item {
-            padding: 12px;
-        }
+  .grid-item {
+    padding: 12px; /* Weniger Padding auf kleinen Geräten */
+  }
 
         .footer {
             font-size: 11px;
@@ -334,7 +347,6 @@
                 <a href="index_de.html" class="lang-button">Deutsch</a>
             </li>
         </ul>
-
     </nav>
 
     <div class="hero">
