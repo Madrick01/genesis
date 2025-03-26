@@ -228,9 +228,18 @@
         }
 
         .grid-container {
-            grid-template-columns: repeat(1, 1fr); /* 1 Spalte auf Tablets */
-            padding: 20px;
+            display: block;
+            grid-template-columns: 1fr; /* Eine Spalte */
+            gap: 20px;
+            padding: 0 10px;  /* Weniger Abstand am Rand */
         }
+
+        .grid-item {
+            width: 100%; /* Grid Items auf volle Breite setzen */
+            margin-bottom: 20px; /* Abstand zwischen den Items */
+            padding: 12px;
+        }
+
         .hero {
             height: auto; /* Ermöglicht bessere automatische Anpassung */
             padding: 40px 10px;
@@ -349,33 +358,33 @@
         </div>
     </div>
 
-    <div class="grid-container">
-        <div class="grid-item">
-            <img src="asteria.webp" alt="Asteria">
-          <h3>🌌 Asteria</h3>
-          <p>Boundless creativity – expand your thinking beyond known paths.</p>
-        </div>
-        <div class="grid-item">
-            <img src="equinox.webp" alt="Equinox">
-          <h3>⚖️ Equinox</h3>
-          <p>Balance & harmony – find the middle path between chaos and order.</p>
-        </div>
-        <div class="grid-item">
-            <img src="gaia.webp" alt="Gaia">
-          <h3>🌱 Gaia</h3>
-          <p>Natural growth – let your solution evolve organically and sustainably.</p>
-        </div>
-        <div class="grid-item">
-            <img src="ignis.webp" alt="Ignis">
-          <h3>🔥 Ignis</h3>
-          <p>Radical transformation – break old patterns and reinvent yourself.</p>
-        </div>
-        <div class="grid-item">
-            <img src="prisma.webp" alt="Prisma">
-          <h3>💎 Prisma</h3>
-          <p>Multiple perspectives – view your problem from entirely new angles.</p>
-        </div>
-      </div>
+<div class="grid-container">
+    <div class="grid-item">
+        <img src="asteria.webp" alt="Asteria">
+        <h3>🌌 Asteria – Infinite Creativity</h3>
+        <p>No limits, no rules – just pure imagination. Asteria helps you find unconventional solutions.</p>
+    </div>
+    <div class="grid-item">
+        <img src="equinox.webp" alt="Equinox">
+        <h3>⚖️ Equinox – Balance</h3>
+        <p>Harmony between opposites. Equinox shows you how to find balance in chaos.</p>
+    </div>
+    <div class="grid-item">
+        <img src="gaia.webp" alt="Gaia">
+        <h3>🌱 Gaia – Growth</h3>
+        <p>Natural development, sustainable solutions. Gaia shows you how your problem can solve itself.</p>
+    </div>
+    <div class="grid-item">
+        <img src="ignis.webp" alt="Ignis">
+        <h3>🔥 Ignis – Transformation</h3>
+        <p>Revolution, change, radical reorientation. Ignis helps you rethink your problem from the ground up.</p>
+    </div>
+    <div class="grid-item">
+        <img src="prisma.webp" alt="Prisma">
+        <h3>💎 Prisma – Perspectives</h3>
+        <p>See your problem through the eyes of others. Prisma gives you new angles on your challenge.</p>
+    </div>
+</div>
 
       <div class="grid-container">
         <div class="grid-item">
